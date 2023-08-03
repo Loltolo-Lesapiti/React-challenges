@@ -1,44 +1,19 @@
 import './App.css';
-import Colorpicker from './components/Colorrender';
+import { useState } from 'react';
 
 function App() {
-  const colors=[
-    {
-        "hex": "#FF0000",
-        "name": "Red",
-    },
-    {
-        "hex": "#00FF00",
-        "name": "Green",
-    },
-    {
-        "hex": "#0000FF",
-        "name": "Blue",
-    },
-    {
-        "hex": "#FFFF00",
-        "name": "Yellow",
-    },
-    {
-      "hex": "#FFFFFF",
-      "name": "White",
-   },
-    {
-        "hex": "#00FFFF",
-        "name": "Cyan",
-    },
-    {
-        "hex": "#FF00FF",
-        "name": "Magenta",
-    },
-    {
-        "hex": "#000000",
-        "name": "Black",
-    },
-]
+    const [darkMode, setDarkMode] = useState(false);
+  
+    const toggleDarkMode = () => {
+      setDarkMode(!darkMode);
+    };
   return (
-    <div className="mx-8 my-4">
-      <Colorpicker colors={colors} />
+    <div className={`container ${darkMode ? 'dark' : 'light'}`}>
+      <div className="button-container">
+        <button className="rounded-full bg-indigo-500 p-2" onClick={toggleDarkMode}>
+          Toggle Dark Mode
+        </button>
+      </div>
     </div>
   );
 }
