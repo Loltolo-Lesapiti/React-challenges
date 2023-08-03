@@ -3,7 +3,7 @@ import Color from './Color'
 
 const Colorpicker = ({colors}) => {
   return (
-    <div className='flex justify-around'>
+    <div className='grid grid-cols-2 md:grid-cols-4 gap-2 '>
         {colors.map((color,index)=>{
             return <Color key={index} hex={color.hex} name={color.name} />
         })}
