@@ -1,5 +1,5 @@
 import './App.css';
-import Colorpicker from './components/Colorpicker';
+import Colorpicker from './components/Colorrender';
 
 function App() {
   const colors=[
