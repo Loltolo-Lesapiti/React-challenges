@@ -1,19 +1,19 @@
 import './App.css';
-import { useState } from 'react';
-
+import Actions from './components/actions';
+import Footer from './components/footer';
+import Report from './components/report';
+import Textarea from './components/textarea';
+import Header from './components/header';
 function App() {
-    const [darkMode, setDarkMode] = useState(false);
-  
-    const toggleDarkMode = () => {
-      setDarkMode(!darkMode);
-    };
   return (
-    <div className={`container ${darkMode ? 'dark' : 'light'}`}>
-      <div className="button-container">
-        <button className="rounded-full bg-indigo-500 p-2" onClick={toggleDarkMode}>
-          Toggle Dark Mode
-        </button>
-      </div>
+    <div className='h-screen bg-white-200 dark:bg-black'>
+      {/* <Actions />
+      <Footer />
+      <Actions />
+       */}
+      <Header />
+      <Report />
+      <Textarea />
     </div>
   );
 }
