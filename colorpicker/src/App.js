@@ -12,7 +12,6 @@ function App() {
       <Actions />
        */}
       <Header />
-      <Report />
       <Textarea />
     </div>
   );
