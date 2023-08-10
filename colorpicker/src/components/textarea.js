@@ -28,20 +28,19 @@ const Textarea = () => {
   const copyText=()=>{
     if(input){
       navigator.clipboard.writeText(input)
-      alert(input, 'Copied');
     }
   }
 
   return (
-<div className="h-screen flex items-center flex-col mt-8">
+<div className="h-screen flex items-center flex-col mt-8 font-sans text-lg">
   <Report words={words} characters={characters} sentenceCount={sentenceCount} paragraphCount={paragraphCount} />
-  <textarea className="h-1/2 w-1/2 mb-8 border-solid border-2 border-black text-black " placeholder='Write your text here...' onChange={handleInput} value={input}></textarea>
+  <textarea className="h-1/2 w-1/2 mb-8 border-solid border-2 border-black text-black antialiased" placeholder='Write your text here...' onChange={handleInput} value={input}></textarea>
   <ul className='flex flex-row justify-center gap-4'>
-    <li><button  className='border-full shadow-lg bg-sky-400' onClick={handleUpperCase}>Upper Case</button></li>
-    <li><button className='border-full shadow-lg bg-sky-400	' onClick={handleLowerCase}>Lower Case</button></li>
-    <li><button className='border-full shadow-lg bg-red-400	' onClick={clear}>Clear Text</button></li>
+    <li><button  className='rounded-full hover:rounded-lg bg-slate-400 text-lg text-black p-2' onClick={handleUpperCase}>Upper Case</button></li>
+    <li><button className='rounded-full hover:rounded-lg bg-slate-400 text-lg text-black p-2' onClick={handleLowerCase}>Lower Case</button></li>
+    <li><button className='rounded-full hover:rounded-lg bg-slate-400 text-lg text-black p-2' onClick={clear}>Clear Text</button></li>
+    <li><button className='rounded-full hover:rounded-lg bg-red-500 text-lg text-black p-2 ml-8' onClick={copyText}>Copy</button></li>
   </ul>
-  <button className='border-full shadow-lg bg-green-400 mt-8	' onClick={copyText}>Copy</button>
 </div>
   )
 }
